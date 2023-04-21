@@ -40,13 +40,24 @@ cd -
 Navigate up to `Huggingface_Largemodels` directory.
 
 ```bash
-torch-model-archiver --model-name bloom --version 1.0 --handler custom_handler.py --extra-files model.zip,setup_config.json -r requirements.txt
+torch-model-archiver --model-name bloom --version 1.0 --handler custom_handler.py --extra-files model.zip,setup_config.json
 ```
 
 **__Note__**: Modifying setup_config.json
 - Enable `low_cpu_mem_usage` to use accelerate
 - Recommended `max_memory` in `setup_config.json` is the max size of shard.
 - Refer: https://huggingface.co/docs/transformers/main_classes/model#large-model-loading
+
+**__Note__**: Install dependencies in advance, or torchserve start model always get timeout if you archiver model using `torch-model-archiver  --model-name bloom --version 1.0 --handler custom_handler.py --extra-files model.zip,setup_config.json -r requirements.txt`
+
+```bash
+pip install transformers==4.25.1
+pip install accelerate==0.18.0
+
+# fix: pynvml.nvml.NVMLError_FunctionNotFound
+pip install pynvml==8.0.4
+```
+
 
 ### Step 4: Add the mar file to model store
 

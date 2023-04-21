@@ -68,3 +68,9 @@ torchserve --start --ncs --ts-config config.properties
 ```bash
 curl -v "http://localhost:8080/predictions/bloom" -T sample_text.txt
 ```
+
+### Troubleshooting
+
+Jupyter: XSRF cookie does not match POST
+
+Solution: https://stackoverflow.com/questions/44088615/jupyter-xsrf-cookie-does-not-match-post

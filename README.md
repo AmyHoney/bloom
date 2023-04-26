@@ -41,7 +41,7 @@ cd -
 Navigate up to `Huggingface_Largemodels` directory.
 
 ```bash
-torch-model-archiver --model-name bloom --version 1.0 --handler custom_handler.py --extra-files model.zip,setup_config.json
+torch-model-archiver --model-name bloom --version 1.0 --handler custom_handler.py --extra-files model.zip,setup_config.json -r requirements.txt
 ```
 
 The MAR model package is around 25GB.

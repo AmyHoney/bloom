@@ -6,10 +6,11 @@ This document briefs on serving large HG models with limited resource using acce
 
 ### Step 1: Create Notebook server on Kubeflow UI
 
-给这个notebook server分配资源 8CPUs，16Gi Memory, 1 GPUs, 80G disk
+Create a Notebook server in Kubeflow UI using resources: 8CPUs, 16Gi memory, 1GPU, 50G disk
 
-image选择：projects.registry.vmware.com/models/llm/pytorch/torchserve-notebook:latest-gpu-v0.15
+And select custom image, enter: `projects.registry.vmware.com/models/llm/pytorch/torchserve-notebook:latest-gpu-v0.15`
 
+It takes some time to make the notebook serving running. You can click `CONNECT` after the staus of notebook server shows running.
 
 ### Step 2: Download model
 

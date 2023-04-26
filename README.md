@@ -43,6 +43,8 @@ Navigate up to `Huggingface_Largemodels` directory.
 torch-model-archiver --model-name bloom --version 1.0 --handler custom_handler.py --extra-files model.zip,setup_config.json
 ```
 
+The MAR model package is around 25GB.
+
 **__Note__**: Modifying setup_config.json
 - Enable `low_cpu_mem_usage` to use accelerate
 - Recommended `max_memory` in `setup_config.json` is the max size of shard.

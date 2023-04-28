@@ -1,6 +1,6 @@
 # Bloom: loading large Huggingface models with constrained resources using accelerate
 
-We dedicated on `bigscience/bloom-7b1 <https://huggingface.co/bigscience/bloom-7b1>` model for inference, and it's BigScience Large Open-science Open-access Multilingual Language Model.
+We dedicated on [bigscience/bloom-7b1](https://huggingface.co/bigscience/bloom-7b1) model for inference, and it's BigScience Large Open-science Open-access Multilingual Language Model.
 
 This document briefs on serving large HG models with limited resource using accelerate. This option can be activated with `low_cpu_mem_usage=True`. The model is first created on the Meta device (with empty weights) and the state dict is then loaded inside it (shard by shard in the case of a sharded checkpoint).
 
@@ -52,14 +52,6 @@ The MAR model package is around 25GB.
 - Refer: https://huggingface.co/docs/transformers/main_classes/model#large-model-loading
 
 **__Note__**: Install dependencies in advance, or torchserve start model always get timeout if you archiver model using `torch-model-archiver  --model-name bloom --version 1.0 --handler custom_handler.py --extra-files model.zip,setup_config.json -r requirements.txt`
-
-```bash
-pip install transformers==4.25.1
-pip install accelerate==0.18.0
-
-# fix: pynvml.nvml.NVMLError_FunctionNotFound
-pip install pynvml==8.0.4
-```
 
 
 ### Step 4: Add the mar file to model store
